@@ -17,20 +17,20 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        body: const MyCustomForm(),
+        body: const CalculatorForm(),
       ),
     );
   }
 }
 
-class MyCustomForm extends StatefulWidget {
-  const MyCustomForm({super.key});
+class CalculatorForm extends StatefulWidget {
+  const CalculatorForm({super.key});
 
   @override
-  MyCustomFormState createState() => MyCustomFormState();
+  CalculatorFormState createState() => CalculatorFormState();
 }
 
-class MyCustomFormState extends State<MyCustomForm> {
+class CalculatorFormState extends State<CalculatorForm> {
   final _formKey = GlobalKey<FormState>();
 
   int _firstNumber = 0;
@@ -49,6 +49,7 @@ class MyCustomFormState extends State<MyCustomForm> {
       _formKey.currentState?.save();
 
       num result = 0;
+
       switch (_symbol) {
         case '+':
           result = _firstNumber + _secondNumber;
